@@ -1,30 +1,39 @@
-import { useMemo, useState } from "react";
+// src/sections/certificates.jsx
+import { useState, useMemo } from "react";
 import Section from "../components/Section";
 import { certificates } from "../data/certificates";
 
+// Helper: convierte un link de Drive "/view" a "/preview"
+function toDrivePreview(url) {
+    if (!url) return null;
+    const m1 = url.match(/https:\/\/drive\.google\.com\/file\/d\/([^/]+)\/view/);
+    if (m1) return `https://drive.google.com/file/d/${m1[1]}/preview`;
+    const m2 = url.match(/[?&]id=([^&]+)/);
+    if (m2) return `https://drive.google.com/file/d/${m2[1]}/preview`;
+    return null;
+}
+
 function PdfPreview({ url }) {
-    // Estrategia 1: Google Docs Viewer
-    const gview = useMemo(
-        () => `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(url)}`,
-        [url]
-    );
+    const drivePreview = useMemo(() => toDrivePreview(url), [url]);
 
-    // Si gview falla (bloqueo/blank), mostramos intento directo.
-    const DirectEmbed = () => (
-        <object
-            data={url}
-            type="application/pdf"
-            className="w-full h-[70vh] rounded-xl border"
-        >
-            <iframe
-                src={url}
-                title="Certificado"
-                className="w-full h-[70vh] rounded-xl border"
-                referrerPolicy="no-referrer"
-            />
-        </object>
-    );
+    // Si es de Drive, usamos /preview (lo más confiable)
+    if (drivePreview) {
+        return (
+            <div className="w-full">
+                <iframe
+                    src={drivePreview}
+                    title="Vista previa del certificado"
+                    className="w-full h-[70vh] rounded-xl border"
+                    loading="lazy"
+                    allow="autoplay"
+                    referrerPolicy="no-referrer"
+                />
+            </div>
+        );
+    }
 
+    // Si NO es Drive (otro host), probamos Google Docs Viewer como fallback
+    const gview = `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(url)}`;
     return (
         <div className="w-full">
             <iframe
@@ -73,10 +82,10 @@ export default function Certificates() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex items-center justify-between p-3 border-b">
-                            <h4 className="font-semibold text-sm sm:text-base text-slate-900">{openItem.title}</h4>
+                            <h4 className="font-semibold text-sm sm:text-base">{openItem.title}</h4>
                             <button
                                 onClick={() => setOpenId(null)}
-                                className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 text-slate-900"
+                                className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 dark:hover:bg-white/10"
                             >
                                 Cerrar
                             </button>
@@ -88,7 +97,7 @@ export default function Certificates() {
                                     href={openItem.pdfUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-sm underline opacity-80 hover:opacity-100 text-slate-900"
+                                    className="text-sm underline opacity-80 hover:opacity-100"
                                 >
                                     Abrir en Google Drive
                                 </a>
