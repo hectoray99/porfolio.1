@@ -8,7 +8,7 @@ const projects = [
     id: "speedtech",
     title: "speedTech — Servicios IT a domicilio",
     description:
-      "Landing page institucional con React + Vite + Tailwind. Optimizada para SEO básico y performance.",
+      "SpeedTech — Servicios IT. \nProyecto web institucional desarrollado con React + Vite + Tailwind. \nDiseñado para comunicar servicios tecnológicos de forma clara y moderna, con rendimiento optimizado y visibilidad en buscadores.",
     url: "https://speedtech.com.ar",
   },
 ];
@@ -58,7 +58,7 @@ export default function Projects() {
             className="card hover:shadow-md transition"
           >
             <h3 className="font-semibold leading-tight">{p.title}</h3>
-            <p className="text-sm opacity-80 mt-1">{p.description}</p>
+            <p className="text-sm opacity-80 mt-1 whitespace-pre-line">{p.description}</p>
 
             <div className="flex gap-2 mt-3">
               <button
