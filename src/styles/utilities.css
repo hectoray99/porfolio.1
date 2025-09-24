@@ -18,7 +18,7 @@
 
   .dark body .card {
     /* Oscuro */
-    @apply bg-slate-800 text-slate-100 border-slate-700 shadow-none;
+    @apply bg-slate-500 text-slate-100 border-slate-700 shadow-none;
   }
 
   body .surface {
@@ -96,7 +96,7 @@
 /* dark harmony tweak */
 .card p,
 .surface p {
-  @apply text-slate-700 dark:text-slate-900;
+  @apply text-slate-800 dark:text-slate-900;
 }
 
 .card .opacity-80 {

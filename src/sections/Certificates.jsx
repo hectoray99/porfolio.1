@@ -82,10 +82,10 @@ export default function Certificates() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex items-center justify-between p-3 border-b">
-                            <h4 className="font-semibold text-sm sm:text-base">{openItem.title}</h4>
+                            <h4 className="font-semibold text-sm sm:text-base text-slate-900">{openItem.title}</h4>
                             <button
                                 onClick={() => setOpenId(null)}
-                                className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 dark:hover:bg-white/10"
+                                className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 text-slate-900"
                             >
                                 Cerrar
                             </button>
@@ -97,7 +97,7 @@ export default function Certificates() {
                                     href={openItem.pdfUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-sm underline opacity-80 hover:opacity-100"
+                                    className="text-sm underline opacity-80 hover:opacity-100 text-slate-900"
                                 >
                                     Abrir en Google Drive
                                 </a>

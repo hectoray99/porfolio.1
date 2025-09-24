@@ -10,7 +10,7 @@ export default function Experience() {
   return (
     <Section id="experience" title="Experiencia">
       <div className="relative">
-        <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800" />
+        <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-100" />
         <ul className="space-y-8">
           {experience.map((item, idx) => (
             <li key={idx} className="relative pl-10 sm:pl-12">
@@ -28,14 +28,14 @@ export default function Experience() {
                   <h3 className="font-semibold text-lg text-slate-900 dark:text-slate-100">
                     {item.role}
                   </h3>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
+                  <span className="text-sm text-slate-100 dark:text-slate-400">
                     {item.period}
                   </span>
                 </div>
 
-                <p className="mt-1 text-slate-600 dark:text-slate-300">{item.company}</p>
+                <p className="mt-1 text-slate-100 dark:text-slate-100">{item.company}</p>
 
-                <ul className="list-disc pl-5 mt-3 space-y-1 text-slate-700 dark:text-slate-300">
+                <ul className="list-disc pl-5 mt-3 space-y-1 text-slate-900 dark:text-slate-300">
                   {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
               </motion.div>
