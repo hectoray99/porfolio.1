@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hector Ayala</title>
+  
+  <!-- Fuente Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; }
+  </style>
+  <!-- Init theme: respeta localStorage, sino sistema -->
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = saved ? saved === 'dark' : prefersDark;
+      document.documentElement.classList.toggle('dark', useDark);
+    } catch {}
+  </script>
+  <script type="module" crossorigin src="/porfolio.1/assets/index-Cgh98v2k.js"></script>
+  <link rel="stylesheet" crossorigin href="/porfolio.1/assets/index-BSc3RwIJ.css">
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
