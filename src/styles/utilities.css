@@ -1,7 +1,5 @@
 @layer components {
 
-<<<<<<< HEAD
-=======
   /* Base button + focus ring */
   .btn {
     @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition-colors select-none;
@@ -12,7 +10,6 @@
   }
 
 
->>>>>>> 01e8378 (cambios)
   /* Superficies con más especificidad: gana en claro y en oscuro */
   body .card {
     /* Claro */
@@ -34,18 +31,12 @@
 
   /* Botones */
   .btn-primary {
-<<<<<<< HEAD
-=======
     /* Keep strong contrast across themes */
 
->>>>>>> 01e8378 (cambios)
     @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
   }
 
   .btn-secondary {
-<<<<<<< HEAD
-    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium border hover:bg-sky-50 dark:border-slate-700 dark:hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
-=======
     /* Base contrast for light/dark */
     @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium border bg-white text-slate-800 border-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
   }
@@ -74,7 +65,6 @@
   .btn-secondary:disabled,
   .btn-secondary[aria-disabled="true"] {
     @apply opacity-60 cursor-not-allowed;
->>>>>>> 01e8378 (cambios)
   }
 
   /* Chips */
@@ -83,22 +73,6 @@
   }
 
   /* Texto por defecto en superficies */
-<<<<<<< HEAD
-.card, .surface {
-  @apply text-slate-800 dark:text-slate-100;
-}
-
-/* Títulos dentro de cards */
-.card h3, .surface h3,
-.card p.font-medium, .surface p.font-medium {
-  @apply text-slate-900 dark:text-slate-100;
-}
-
-/* Subtítulos o metadata */
-.card .text-sm, .surface .text-sm {
-  @apply text-slate-600 dark:text-slate-300;
-}
-=======
   .card,
   .surface {
     @apply text-slate-800 dark:text-slate-200;
@@ -149,5 +123,4 @@
 .card .opacity-60,
 .surface .opacity-60 {
   @apply dark:opacity-100;
->>>>>>> 01e8378 (cambios)
 }
