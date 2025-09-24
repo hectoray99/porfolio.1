@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useMemo, useState } from "react";
 import Section from "../components/Section";
 import { certificates } from "../data/certificates";
@@ -26,44 +25,6 @@ function PdfPreview({ url }) {
         </object>
     );
 
-=======
-// src/sections/certificates.jsx
-import { useState, useMemo } from "react";
-import Section from "../components/Section";
-import { certificates } from "../data/certificates";
-
-// Helper: convierte un link de Drive "/view" a "/preview"
-function toDrivePreview(url) {
-    if (!url) return null;
-    const m1 = url.match(/https:\/\/drive\.google\.com\/file\/d\/([^/]+)\/view/);
-    if (m1) return `https://drive.google.com/file/d/${m1[1]}/preview`;
-    const m2 = url.match(/[?&]id=([^&]+)/);
-    if (m2) return `https://drive.google.com/file/d/${m2[1]}/preview`;
-    return null;
-}
-
-function PdfPreview({ url }) {
-    const drivePreview = useMemo(() => toDrivePreview(url), [url]);
-
-    // Si es de Drive, usamos /preview (lo más confiable)
-    if (drivePreview) {
-        return (
-            <div className="w-full">
-                <iframe
-                    src={drivePreview}
-                    title="Vista previa del certificado"
-                    className="w-full h-[70vh] rounded-xl border"
-                    loading="lazy"
-                    allow="autoplay"
-                    referrerPolicy="no-referrer"
-                />
-            </div>
-        );
-    }
-
-    // Si NO es Drive (otro host), probamos Google Docs Viewer como fallback
-    const gview = `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(url)}`;
->>>>>>> 01e8378 (cambios)
     return (
         <div className="w-full">
             <iframe
@@ -72,30 +33,7 @@ function PdfPreview({ url }) {
                 className="w-full h-[70vh] rounded-xl border"
                 loading="lazy"
                 referrerPolicy="no-referrer"
-<<<<<<< HEAD
-                onError={(e) => {
-                    // reemplazamos el iframe por el embed directo si hubo error de carga
-                    const mount = e.currentTarget.parentElement;
-                    if (mount) {
-                        mount.innerHTML = "";
-                        const container = document.createElement("div");
-                        mount.appendChild(container);
-                        // Renderizamos embed directo
-                        const el = document.createElement("object");
-                        el.setAttribute("data", url);
-                        el.setAttribute("type", "application/pdf");
-                        el.setAttribute("class", "w-full h-[70vh] rounded-xl border");
-                        mount.appendChild(el);
-                    }
-                }}
             />
-            {/* Fallback visible si nada carga */}
-            <noscript>
-                <a href={url} target="_blank" rel="noreferrer">Abrir certificado</a>
-            </noscript>
-=======
-            />
->>>>>>> 01e8378 (cambios)
         </div>
     );
 }
@@ -108,14 +46,7 @@ export default function Certificates() {
         <Section id="certificates" title="Certificados">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {certificates.map((c) => (
-<<<<<<< HEAD
-                    <div
-                        key={c.id}
-                        className="rounded-2xl border p-5 bg-white/70 dark:bg-white/5 backdrop-blur hover:shadow-md transition"
-                    >
-=======
                     <div key={c.id} className="card hover:shadow-md transition">
->>>>>>> 01e8378 (cambios)
                         <div className="mb-2">
                             <h3 className="font-semibold leading-tight">{c.title}</h3>
                             <p className="text-sm opacity-80">
@@ -124,14 +55,7 @@ export default function Certificates() {
                         </div>
 
                         <div className="mt-3">
-<<<<<<< HEAD
-                            <button
-                                onClick={() => setOpenId(c.id)}
-                                className="text-sm rounded-lg px-3 py-2 border hover:bg-gray-50 dark:hover:bg-white/10"
-                            >
-=======
                             <button onClick={() => setOpenId(c.id)} className="btn btn-secondary">
->>>>>>> 01e8378 (cambios)
                                 Ver
                             </button>
                         </div>
@@ -149,17 +73,10 @@ export default function Certificates() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex items-center justify-between p-3 border-b">
-<<<<<<< HEAD
-                            <h4 className="font-semibold text-sm sm:text-base">{openItem.title}</h4>
-                            <button
-                                onClick={() => setOpenId(null)}
-                                className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 dark:hover:bg-white/10"
-=======
                             <h4 className="font-semibold text-sm sm:text-base text-slate-900">{openItem.title}</h4>
                             <button
                                 onClick={() => setOpenId(null)}
                                 className="rounded-md px-3 py-1 text-sm border hover:bg-gray-50 text-slate-900"
->>>>>>> 01e8378 (cambios)
                             >
                                 Cerrar
                             </button>
@@ -171,15 +88,9 @@ export default function Certificates() {
                                     href={openItem.pdfUrl}
                                     target="_blank"
                                     rel="noreferrer"
-<<<<<<< HEAD
-                                    className="text-sm underline opacity-80 hover:opacity-100"
-                                >
-                                    Abrir en nueva pestaña
-=======
                                     className="text-sm underline opacity-80 hover:opacity-100 text-slate-900"
                                 >
                                     Abrir en Google Drive
->>>>>>> 01e8378 (cambios)
                                 </a>
                             </div>
                         </div>

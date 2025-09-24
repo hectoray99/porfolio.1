@@ -35,11 +35,7 @@ export default function Experience() {
 
                 <p className="mt-1 text-slate-600 dark:text-slate-300">{item.company}</p>
 
-<<<<<<< HEAD
-                <ul className="list-disc pl-5 mt-3 space-y-1 text-slate-700 dark:text-slate-200">
-=======
                 <ul className="list-disc pl-5 mt-3 space-y-1 text-slate-700 dark:text-slate-300">
->>>>>>> 01e8378 (cambios)
                   {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
               </motion.div>

@@ -55,11 +55,7 @@ export default function Projects() {
         {projects.map((p) => (
           <div
             key={p.id}
-<<<<<<< HEAD
-            className="rounded-xl border p-4 bg-white/70 dark:bg-white/5 backdrop-blur hover:shadow-md transition"
-=======
             className="card hover:shadow-md transition"
->>>>>>> 01e8378 (cambios)
           >
             <h3 className="font-semibold leading-tight">{p.title}</h3>
             <p className="text-sm opacity-80 mt-1">{p.description}</p>
@@ -67,11 +63,7 @@ export default function Projects() {
             <div className="flex gap-2 mt-3">
               <button
                 onClick={() => setOpen(p.id)}
-<<<<<<< HEAD
-                className="text-sm rounded-lg px-3 py-2 border hover:bg-gray-50 dark:hover:bg-white/10"
-=======
                 className="btn btn-secondary"
->>>>>>> 01e8378 (cambios)
               >
                 Vista previa
               </button>
@@ -79,11 +71,7 @@ export default function Projects() {
                 href={p.url}
                 target="_blank"
                 rel="noreferrer"
-<<<<<<< HEAD
-                className="text-sm rounded-lg px-3 py-2 border hover:bg-gray-50 dark:hover:bg-white/10"
-=======
                 className="btn btn-secondary"
->>>>>>> 01e8378 (cambios)
               >
                 Abrir sitio
               </a>

@@ -10,11 +10,7 @@ function Card({ title, value, href }) {
       rel="noreferrer"
       className="card hover:shadow-md transition-shadow"
     >
-<<<<<<< HEAD
-      <p className="text-xs uppercase tracking-wide text-slate-500">{title}</p>
-=======
       <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{title}</p>
->>>>>>> 01e8378 (cambios)
       <p className="mt-1 font-medium break-words">{value}</p>
     </a>
   );
