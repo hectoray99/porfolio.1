@@ -1,0 +1,153 @@
+@layer components {
+
+<<<<<<< HEAD
+=======
+  /* Base button + focus ring */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition-colors select-none;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+  }
+
+
+>>>>>>> 01e8378 (cambios)
+  /* Superficies con más especificidad: gana en claro y en oscuro */
+  body .card {
+    /* Claro */
+    @apply rounded-2xl border p-5 shadow-sm bg-white text-slate-900 border-slate-200 transition-colors;
+  }
+
+  .dark body .card {
+    /* Oscuro */
+    @apply bg-slate-800 text-slate-100 border-slate-700 shadow-none;
+  }
+
+  body .surface {
+    @apply rounded-2xl border p-6 shadow-sm bg-white text-slate-900 border-slate-200 transition-colors;
+  }
+
+  .dark body .surface {
+    @apply bg-slate-800 text-slate-100 border-slate-700 shadow-none;
+  }
+
+  /* Botones */
+  .btn-primary {
+<<<<<<< HEAD
+=======
+    /* Keep strong contrast across themes */
+
+>>>>>>> 01e8378 (cambios)
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+  }
+
+  .btn-secondary {
+<<<<<<< HEAD
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium border hover:bg-sky-50 dark:border-slate-700 dark:hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+=======
+    /* Base contrast for light/dark */
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium border bg-white text-slate-800 border-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+  }
+
+  /* Hover only on devices that support hover */
+  @media (hover: hover) {
+    .btn-secondary:hover {
+      @apply bg-slate-50 text-slate-900 border-slate-300;
+    }
+
+    .dark .btn-secondary:hover {
+      @apply bg-slate-700 text-slate-100 border-slate-600;
+    }
+  }
+
+  /* Active feedback */
+  .btn-secondary:active {
+    @apply bg-slate-100 text-slate-900;
+  }
+
+  .dark .btn-secondary:active {
+    @apply bg-slate-700 text-slate-100;
+  }
+
+  /* Disabled */
+  .btn-secondary:disabled,
+  .btn-secondary[aria-disabled="true"] {
+    @apply opacity-60 cursor-not-allowed;
+>>>>>>> 01e8378 (cambios)
+  }
+
+  /* Chips */
+  .badge {
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-300;
+  }
+
+  /* Texto por defecto en superficies */
+<<<<<<< HEAD
+.card, .surface {
+  @apply text-slate-800 dark:text-slate-100;
+}
+
+/* Títulos dentro de cards */
+.card h3, .surface h3,
+.card p.font-medium, .surface p.font-medium {
+  @apply text-slate-900 dark:text-slate-100;
+}
+
+/* Subtítulos o metadata */
+.card .text-sm, .surface .text-sm {
+  @apply text-slate-600 dark:text-slate-300;
+}
+=======
+  .card,
+  .surface {
+    @apply text-slate-800 dark:text-slate-200;
+  }
+
+  /* Títulos dentro de cards */
+  .card h3,
+  .surface h3,
+  .card p.font-medium,
+  .surface p.font-medium {
+    @apply text-slate-900 dark:text-slate-100;
+  }
+
+  /* Subtítulos o metadata */
+  .card .text-sm,
+  .surface .text-sm {
+    @apply text-slate-600 dark:text-slate-200;
+  }
+}
+
+/* dark harmony tweak */
+.card p,
+.surface p {
+  @apply text-slate-700 dark:text-slate-900;
+}
+
+.card .opacity-80 {
+  @apply dark:opacity-80;
+}
+
+/* evita texto lavadito en oscuro */
+
+
+/* Improved readability in dark mode */
+.card li,
+.surface li {
+  @apply dark:text-slate-200;
+}
+
+.card small,
+.surface small {
+  @apply dark:text-slate-200;
+}
+
+/* Avoid washed text in dark: neutralize common opacity utilities used in content */
+.card .opacity-70,
+.surface .opacity-70,
+.card .opacity-60,
+.surface .opacity-60 {
+  @apply dark:opacity-100;
+>>>>>>> 01e8378 (cambios)
+}

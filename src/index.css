@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "./styles/utilities.css";
+
+/* Tema global */
+@layer base {
+    :root {
+        color-scheme: light dark;
+    }
+
+    html,
+    body,
+    #root {
+        @apply min-h-screen;
+    }
+
+    /* 🔆 Tema claro */
+    body {
+        @apply bg-white text-slate-900;
+    }
+
+    /* 🌙 Tema oscuro */
+    .dark body {
+        @apply bg-slate-900 text-slate-100;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px; /* h-16 del navbar */
+
+}
