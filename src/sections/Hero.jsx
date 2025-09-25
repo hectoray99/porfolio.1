@@ -85,17 +85,12 @@ export default function Hero() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="rounded-2xl border border-slate-200 dark:border-slate-800 p-8 md:p-10 shadow-sm
-                     bg-white/80 dark:bg-slate-900/60 backdrop-blur"
+          
         >
-          <div className="aspect-square rounded-xl grid place-items-center
-                          bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950
-                          border border-slate-200 dark:border-slate-800">
+          <div className="mx-auto my-auto">
             {/* Ícono simple para ahora (podés reemplazar por tu foto) */}
-            <LaptopIcon className="w-20 h-20 text-slate-700 dark:text-slate-200" />
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-              Portafolio en React + Tailwind
-            </p>
+            <img src="./src/assets/hector.png" alt="hector ayala" />
+
           </div>
         </motion.div>
       </div>
