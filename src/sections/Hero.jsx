@@ -89,7 +89,7 @@ export default function Hero() {
         >
           <div className="mx-auto my-auto">
             {/* Ícono simple para ahora (podés reemplazar por tu foto) */}
-            <img src="./src/assets/hector.png" alt="hector ayala" />
+            <img src="src/assets/hector.png" alt="hector ayala" />
 
           </div>
         </motion.div>
