@@ -1,5 +1,6 @@
 // Hero.jsx — Hero responsivo con degradé, CTAs y tarjeta visual
 import { motion } from "framer-motion";
+import hector from "../assets/hector.png";
 
 export default function Hero() {
   return (
@@ -89,7 +90,7 @@ export default function Hero() {
         >
           <div className="mx-auto my-auto">
             {/* Ícono simple para ahora (podés reemplazar por tu foto) */}
-            <img src="src/assets/hector.png" alt="hector ayala" />
+            <img src={hector} alt="hector ayala" />
 
           </div>
         </motion.div>
