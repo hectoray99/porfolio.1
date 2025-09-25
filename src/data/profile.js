@@ -12,7 +12,7 @@ export const profile = {
 
 /** Habilidades técnicas (mostradas como chips) */
 export const techSkills = [
-  "JavaScript","React","HTML","CSS","PHP","MySQL","Git","Excel Avanzado"
+  "JavaScript","React","HTML","CSS","PHP","MySQL","Git","Excel Avanzado","Node.js","Tailwind","Figma","Python","Vite"
 ];
 
 /** Habilidades blandas */
